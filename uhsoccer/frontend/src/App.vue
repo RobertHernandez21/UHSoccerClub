@@ -1,40 +1,38 @@
 <template>
-  <div>
-    <nav>
-      <router-link to="/" class="nav-link">Home</router-link>
-      <router-link to="/games" class="nav-link">Games</router-link>
-      <router-link to="/roster" class="nav-link">Roster</router-link>
-      <router-link to="/interest" class="nav-link">Player Interest</router-link>
-      <router-link to="/contact" class="nav-link">Contact</router-link>
-    </nav>
-    <router-view></router-view>
+  <div class="app">
+    <navigation/>
+    <router-view />
   </div>
 </template>
 
 <script>
+import navigation from "./components/navigation.vue";
 export default {
-  name: 'App',
-  // Add component logic here
-}
+  name: "App",
+  components:{
+    navigation
+  }
+};
 </script>
 
-<style scoped>
-nav {
-  background-color: black;
-  color: white;
+<style lang="scss">
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
 }
 
-.nav-link {
-  display: block;
-  padding: 1rem;
-  text-align: center;
-  text-decoration: none;
-  color: white;
+.app {
+  min-height: 100vh;
+  position: relative;
+  background-color: #f1f1f1;
 }
-
-.nav-link:hover {
-  background-color: red;
+.container {
+  padding: 0 20px;
+  max-width: 1140px;
+  margin: 0 auto;
 }
-
 </style>
 
